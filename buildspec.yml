@@ -2,20 +2,22 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 14
     commands:
-      - echo "Installing NGINX on Amazon Linux 2"
+      - echo Installing NGINX
       - yum update -y
       - yum install nginx -y
-      - mkdir -p /var/www/html   
+      - mkdir -p /var/www/html
 
   build:
     commands:
-      - echo "Build started on $(date)"
-      - cp index.html /var/www/html/   
+      - echo Build started on $(date)
+      - cp ./index.html /var/www/html/   
 
   post_build:
     commands:
-      - echo "Post-build phase completed"
+      - echo Post-build phase completed
 
 artifacts:
   files:
