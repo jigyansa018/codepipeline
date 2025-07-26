@@ -4,12 +4,14 @@ phases:
   install:
     commands:
       - echo "Nothing to install"
+
   build:
     commands:
       - echo "Build started on $(date)"
       - ls -la
-      - mkdir -p output
-      - cp *.html output/     
+      - mkdir -p ./output
+      - cp ./index.html ./output/
+
   post_build:
     commands:
       - echo "Build completed on $(date)"
