@@ -13,6 +13,7 @@ phases:
   build:
     commands:
       - echo Build started on $(date)
+      - ls -la
       - cp ./index.html /var/www/html/   
 
   post_build:
