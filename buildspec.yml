@@ -2,24 +2,20 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 14
     commands:
-      - echo Installing NGINX
-      - yum update -y
-      - yum install nginx -y
-      - mkdir -p /var/www/html
+      - echo "Installing dependencies..."
 
   build:
     commands:
-      - echo Build started on $(date)
-      - ls -la
-      - cp ./index.html /var/www/html/   
+      - echo "Build started on $(date)"
+      - ls -al   
+      - mkdir -p output
+      - cp index.html output/
 
   post_build:
     commands:
-      - echo Post-build phase completed
+      - echo "Build completed on $(date)"
 
 artifacts:
   files:
-    - /var/www/html/index.html
+    - output/index.html
