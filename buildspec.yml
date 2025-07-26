@@ -3,18 +3,17 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing dependencies..."
+      - echo Installing dependencies...
 
   build:
     commands:
-      - echo "Build started on $(date)"
-      - ls -al   
-      - mkdir -p output
-      - cp index.html output/
+      - echo Build started on $(date)
+      - mkdir -p output         # ✅ Create output folder
+      - cp index.html output/   # ✅ Now the copy will succeed
 
   post_build:
     commands:
-      - echo "Build completed on $(date)"
+      - echo Build completed on $(date)
 
 artifacts:
   files:
