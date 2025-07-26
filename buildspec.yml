@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing NGINX on Amazon Linux"
+      - echo "Installing NGINX on Amazon Linux 2"
       - yum update -y
       - yum install nginx -y
+      - mkdir -p /var/www/html
 
   build:
     commands:
