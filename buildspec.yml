@@ -3,9 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing NGINX"
-      - sudo apt-get update
-      - sudo apt-get install nginx -y
+      - echo "Installing NGINX on Amazon Linux"
+      - yum update -y
+      - yum install nginx -y
 
   build:
     commands:
