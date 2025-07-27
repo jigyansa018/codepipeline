@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Nothing to install"
+
+  build:
+    commands:
+      - echo "Build started on $(date)"
+      - echo "Current working directory is:"
+      - pwd
+      - echo "Listing contents of working directory:"
+      - ls -la
+      - echo "Creating output folder"
+      - mkdir -p output
+      - echo "Checking if index.html exists:"
+      - cat index.html || echo "index.html NOT FOUND!"
+      - echo "Copying index.html to output/"
+      - cp index.html output/
+
+  post_build:
+    commands:
+      - echo "Build completed on $(date)"
+
+artifacts:
+  files:
+    - output/index.html
